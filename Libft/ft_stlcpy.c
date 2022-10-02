@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_stlcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 22:01:25 by dramirez          #+#    #+#             */
-/*   Updated: 2022/09/27 22:30:52 by dramirez         ###   ########.fr       */
+/*   Created: 2022/10/02 13:30:26 by dramirez          #+#    #+#             */
+/*   Updated: 2022/10/02 16:48:39 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned char	*objetivo;
-	unsigned char	origen;
-	size_t			caract;
+	size_t	posicion;
 
-	objetivo = str;
-	origen = c;
-	caract = 0;
-	while (caract++ < n)
-		*objetivo++ = origen;
-	return (str);
+	if (!size)
+		return (ft_strlen(src));
+	posicion = 0;
+	while (src[posicion] && (posicion < size -1))
+	{
+		dst[posicion] = src[posicion];
+		posicion++;
+	}
+	dst[posicion] = 0;
+	return (ft_strlen(src));
 }

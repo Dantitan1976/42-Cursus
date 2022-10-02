@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 22:01:25 by dramirez          #+#    #+#             */
-/*   Updated: 2022/09/27 22:30:52 by dramirez         ###   ########.fr       */
+/*   Created: 2022/10/01 00:54:08 by dramirez          #+#    #+#             */
+/*   Updated: 2022/10/01 00:55:22 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*objetivo;
-	unsigned char	origen;
-	size_t			caract;
+	size_t	longitud;
+	char	*destino;
+	char	*origen;
 
-	objetivo = str;
-	origen = c;
-	caract = 0;
-	while (caract++ < n)
-		*objetivo++ = origen;
-	return (str);
+	longitud = 0;
+	destino = (char *)dest;
+	origen = (char *)src;
+	if (!src && !dest)
+		return (0);
+	if (dest < src)
+	{
+		while (longitud < n)
+		{
+			destino[longitud] = origen[longitud];
+			longitud++;
+		}
+	}
+	else
+	{
+		while (n--)
+		{
+			destino[n] = origen[n];
+		}
+	}
+	return (dest);
 }

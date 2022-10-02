@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 22:01:25 by dramirez          #+#    #+#             */
-/*   Updated: 2022/09/27 22:30:52 by dramirez         ###   ########.fr       */
+/*   Created: 2022/10/02 20:50:30 by dramirez          #+#    #+#             */
+/*   Updated: 2022/10/02 21:56:08 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*objetivo;
-	unsigned char	origen;
-	size_t			caract;
+	unsigned int	posicion;
 
-	objetivo = str;
-	origen = c;
-	caract = 0;
-	while (caract++ < n)
-		*objetivo++ = origen;
-	return (str);
+	posicion = 0;
+	while (s[posicion] != '\0')
+	{
+		if (s[posicion] == (char)c)
+			return ((char *)s + posicion);
+		posicion++;
+	}
+	if ((char)c == s[posicion])
+		return ((char *)s + posicion);
+	return (NULL);
 }
