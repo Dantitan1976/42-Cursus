@@ -6,7 +6,7 @@
 /*   By: dramirez <dramirez@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:56:48 by dramirez          #+#    #+#             */
-/*   Updated: 2022/10/12 20:20:27 by dramirez         ###   ########.fr       */
+/*   Updated: 2022/10/15 08:15:52 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,14 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*cadrec;
-	size_t	cont_s1;
-	size_t	tam_cadrec;
+	size_t	longitud;
 
-	tam_cadrec = ft_strlen(s1) - ft_strlen(set) + 1;
-	cadrec = (char *) malloc(tam_cadrec * sizeof(char));
-	if (!cadrec)
+	if (!s1 || !set)
 		return (NULL);
-	cont_s1 = 0;
-	while (s1[cont_s1] && ft_strchr(set, s1[cont_s1]))
-		cont_s1++;
-	if (cadrec)
-		ft_strlcpy(cadrec, set, tam_cadrec);
-	cadrec[cont_s1] = '\0';
-	return (cadrec);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	longitud = ft_strlen((char *)s1);
+	while (ft_strchr(set, s1[longitud]) && longitud != 0)
+		longitud--;
+	return (ft_substr((char *)s1, 0, longitud + 1));
 }
