@@ -6,7 +6,7 @@
 /*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 22:45:01 by dramirez          #+#    #+#             */
-/*   Updated: 2022/10/23 12:11:46 by dramirez         ###   ########.fr       */
+/*   Updated: 2022/10/30 11:50:06 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	ft_longnum(int numero)
 char	*ft_itoa(int n)
 {
 	char	*cadena;
-	int		numero;
 	int		longitud;
 
 	if (n == -2147483648)
@@ -42,19 +41,18 @@ char	*ft_itoa(int n)
 		return (ft_strdup("0"));
 	longitud = ft_longnum(n);
 	cadena = (char *)malloc((sizeof(char)) * (longitud + 1));
-	numero = n;
 	if (!cadena)
 		return (NULL);
 	cadena[longitud--] = 0;
-	if (numero < 0)
+	if (n < 0)
 	{
 		cadena[0] = '-';
-		numero = numero * -1;
+		n = n * -1;
 	}
-	while (numero > 0)
+	while (n > 0)
 	{
-		cadena[longitud--] = numero % 10 + '0';
-		numero = numero / 10;
+		cadena[longitud--] = n % 10 + '0';
+		n = n / 10;
 	}
 	return (cadena);
 }
