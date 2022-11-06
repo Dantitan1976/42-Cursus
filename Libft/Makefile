@@ -1,3 +1,19 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/06 10:11:21 by dramirez          #+#    #+#              #
+#    Updated: 2022/11/06 17:33:03 by dramirez         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#Nombramos al archivo ejecutable
+NAME = libft.a
+
+#Variable con los archivos del ejecutable
 SRCS =	ft_isalpha.c \
 			ft_isdigit.c \
 			ft_isalnum.c \
@@ -33,29 +49,58 @@ SRCS =	ft_isalpha.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
 	
+SRCS_BONUS = ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c \
+
+#Variable para determinar nuestros archivos objeto
 OBJS = $(SRCS:.c=.o)
 
-AR = ar -rcs
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
+INCLUIR = libft.h
+
+LIB = ar -rcs
+
+OPCION = -c
+
+#Compilador
 CC = gcc
 
-RM = rm -f
-
+#Flags del compilador
 CFLAGS = -Wall -Werror -Wextra
 
-NAME = libft.a
+#Variable del clean
+RM = rm -f
 
+#Funcion principal
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+#Compilamos la libreria
+$(NAME): $(OBJS) $(INCLUIR)
+	$(LIB) $(NAME) $(OBJS)
 
+#Compilamos el bonus
+bonus: $(OBJS) $(OBJS_BONUS) $(INCLUIR)
+	$(LIB) $(NAME) $(OBJS) $(OBJS_BONUS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+#Borramos los objetos que no necesitamos
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 		$(RM) $(NAME)
 
-re: fclean all
+re: fclean all bonus
 
-.PHONY: all clean fclean re
+#Le decimos que no cree ningun archivo con esos nombres
+.PHONY: bonus all clean fclean re
