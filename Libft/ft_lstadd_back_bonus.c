@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 10:41:33 by dramirez          #+#    #+#             */
-/*   Updated: 2022/11/06 11:04:04 by dramirez         ###   ########.fr       */
+/*   Updated: 2022/11/09 20:42:09 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*ultimo;
 
-	if (!lst || !new)
+	if (!lst && !new)
 		return ;
 	else if (*lst == NULL)
 	{
@@ -24,6 +24,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	ultimo = ft_lstlast(*lst);
-	new->next = ultimo->next;
 	ultimo->next = new;
 }
