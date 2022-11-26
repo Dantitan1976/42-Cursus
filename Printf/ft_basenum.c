@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numberlen.c                                     :+:      :+:    :+:   */
+/*   ft_basenum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 18:15:27 by dramirez          #+#    #+#             */
-/*   Updated: 2022/11/23 23:19:25 by dramirez         ###   ########.fr       */
+/*   Created: 2022/11/25 18:53:38 by dramirez          #+#    #+#             */
+/*   Updated: 2022/11/25 19:45:11 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_numberlen(long int numero)
+int	ft_basenum(size_t numero, int base)
 {
-	int	posicion;
+	int	contador;
 
-	posicion = 0;
-	if (numero == 0)
-		posicion = 1;
-	if (numero < 0)
-	{
-		numero = -numero;
-		posicion++;
-	}
+	contador = 0;
+	if (!numero)
+		return (1);
 	while (numero > 0)
 	{
-		numero = numero / 10;
-		posicion++;
+		numero = numero / base;
+		contador++;
 	}
-	return (posicion);
+	return (contador);
 }

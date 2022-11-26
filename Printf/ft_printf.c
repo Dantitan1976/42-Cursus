@@ -6,7 +6,7 @@
 /*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 19:13:53 by dramirez          #+#    #+#             */
-/*   Updated: 2022/11/20 19:40:06 by dramirez         ###   ########.fr       */
+/*   Updated: 2022/11/26 16:18:04 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,41 @@
 int	ft_conversiones(va_list argum, const char *cadena, int contador)
 {
 	if (cadena[contador] == 'c')
-		return (ft_putchar(va_arg(args, int)));
+		return (ft_putchar(va_arg(argum, int)));
 	else if (cadena[contador] == 's')
-		return (ft_putstr(va_arg(args, char *)));
-	if (cadena[contador] == 'p')
-	if (cadena[contador] == 'd')
-	if (cadena[contador] == 'i')
-	if (cadena[contador] == 'u')
-	if (cadena[contador] == 'x')
-	if (cadena[contador] == 'X')
+		return (ft_putstr(va_arg(argum, char *)));
+	else if (cadena[contador] == 'p')
+		return (ft_putpuntero(va_arg(argum, unsigned int)));
+	else if (cadena[contador] == 'd' || cadena[contador] == 'i')
+		return (ft_putnbr(va_arg(argum, int)));
+	else if (cadena[contador] == 'u')
+		return (ft_unsigned(va_arg(argum, unsigned int)));
+	else if (cadena[contador] == 'x' || cadena[contador] == 'X')
+		return (ft_hexad(va_arg(argum, unsigned int), cadena[contador]));
 	else
 		return (ft_putchar('%'));
 }
 
+int	ft_printf(const char *str, ...)
+{
+	int		contador;
+	int		resultado;
+	va_list	args;
 
+	contador = 0;
+	resultado = 0;
+	va_start(args, str);
+	while (str[contador])
+	{
+		if (str[contador] == '%')
+		{
+			contador++;
+			resultado += ft_conversiones(args, str, contador);
+		}
+		else
+			resultado += ft_putchar(str[contador]);
+		contador++;
+	}
+	va_end(args);
+	return (resultado);
+}

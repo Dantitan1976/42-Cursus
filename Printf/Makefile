@@ -6,7 +6,7 @@
 #    By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/20 16:15:45 by dramirez          #+#    #+#              #
-#    Updated: 2022/11/20 19:08:14 by dramirez         ###   ########.fr        #
+#    Updated: 2022/11/26 15:27:56 by dramirez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,17 @@
 NAME = libftprintf.a
 
 #Variable con los archivos del ejecutable
-SRCS =	ft_putchar.c \
+SRCS =	ft_printf.c \
+	ft_putchar.c \
 	ft_putstr.c \
 	ft_numberlen.c \
+	ft_itoa.c \
+	ft_putnbr.c \
+	ft_basenum.c \
+	ft_numachar.c \
+	ft_unsigned.c \
+	ft_hexad.c \
+	ft_putpuntero.c \
 
 #Variable para determinar los archivos objeto
 OBJS = $(SRCS:.c=.o)

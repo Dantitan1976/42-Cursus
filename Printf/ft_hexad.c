@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_hexad.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 17:12:00 by dramirez          #+#    #+#             */
-/*   Updated: 2022/11/25 21:44:44 by dramirez         ###   ########.fr       */
+/*   Created: 2022/11/25 21:10:36 by dramirez          #+#    #+#             */
+/*   Updated: 2022/11/26 11:50:00 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *str)
+int	ft_hexad(unsigned long numero, char conversor)
 {
-	int	posicion;
+	int	num;
 
-	posicion = 0;
-	if (!str)
+	num = ft_basenum(numero, 16);
+	if (numero >= 16)
 	{
-		ft_putstr("(null)");
-		return (6);
+		ft_hexad(numero / 16, conversor);
+		ft_hexad(numero % 16, conversor);
 	}
-	while (str[posicion])
+	else
 	{
-		ft_putchar(str[posicion]);
-		posicion++;
+		if (numero < 10)
+			ft_putchar(numero + '0');
+		else if (conversor == 'x')
+			ft_putchar(numero - 10 + 'a');
+		else if (conversor == 'X')
+			ft_putchar(numero - 10 + 'A');
 	}
-	return (posicion);
+	return (num);
 }

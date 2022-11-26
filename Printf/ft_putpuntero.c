@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numberlen.c                                     :+:      :+:    :+:   */
+/*   ft_putpuntero.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 18:15:27 by dramirez          #+#    #+#             */
-/*   Updated: 2022/11/23 23:19:25 by dramirez         ###   ########.fr       */
+/*   Created: 2022/11/26 11:52:13 by dramirez          #+#    #+#             */
+/*   Updated: 2022/11/26 11:58:47 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_numberlen(long int numero)
+int	ft_putpuntero(unsigned long puntero)
 {
-	int	posicion;
+	int	longitud;
 
-	posicion = 0;
-	if (numero == 0)
-		posicion = 1;
-	if (numero < 0)
-	{
-		numero = -numero;
-		posicion++;
-	}
-	while (numero > 0)
-	{
-		numero = numero / 10;
-		posicion++;
-	}
-	return (posicion);
+	if (!puntero)
+		return (ft_putstr("(null)"));
+	longitud = ft_putstr("0x");
+	longitud += ft_hexad(puntero, 'x');
+	return (longitud);
 }

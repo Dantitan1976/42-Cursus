@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numberlen.c                                     :+:      :+:    :+:   */
+/*   ft_numachar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 18:15:27 by dramirez          #+#    #+#             */
-/*   Updated: 2022/11/23 23:19:25 by dramirez         ###   ########.fr       */
+/*   Created: 2022/11/25 19:17:20 by dramirez          #+#    #+#             */
+/*   Updated: 2022/11/25 21:51:47 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_numberlen(long int numero)
+char	*ft_numachar(unsigned int numero)
 {
-	int	posicion;
+	int				longitud;
+	char			*cadena;
 
-	posicion = 0;
+	longitud = ft_basenum(numero, 10);
+	cadena = malloc ((longitud) * sizeof(char) + 1);
+	if (!cadena)
+		return (NULL);
+	cadena[longitud] = '\0';
+	longitud = longitud - 1;
 	if (numero == 0)
-		posicion = 1;
-	if (numero < 0)
-	{
-		numero = -numero;
-		posicion++;
-	}
+		cadena[0] = '0';
 	while (numero > 0)
 	{
+		cadena[longitud] = (numero % 10) + '0';
 		numero = numero / 10;
-		posicion++;
+		longitud--;
 	}
-	return (posicion);
+	return (cadena);
 }

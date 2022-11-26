@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numberlen.c                                     :+:      :+:    :+:   */
+/*   ft_unsigned.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 18:15:27 by dramirez          #+#    #+#             */
-/*   Updated: 2022/11/23 23:19:25 by dramirez         ###   ########.fr       */
+/*   Created: 2022/11/25 19:36:06 by dramirez          #+#    #+#             */
+/*   Updated: 2022/11/25 19:47:40 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_numberlen(long int numero)
+int	ft_unsigned(unsigned int numero)
 {
-	int	posicion;
+	char	*cadena;
+	int		longitud;
 
-	posicion = 0;
-	if (numero == 0)
-		posicion = 1;
-	if (numero < 0)
-	{
-		numero = -numero;
-		posicion++;
-	}
-	while (numero > 0)
-	{
-		numero = numero / 10;
-		posicion++;
-	}
-	return (posicion);
+	cadena = ft_numachar(numero);
+	longitud = ft_putstr(cadena);
+	free(cadena);
+	return (longitud);
 }
