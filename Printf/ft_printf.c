@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 19:13:53 by dramirez          #+#    #+#             */
-/*   Updated: 2022/11/26 16:18:04 by dramirez         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:03:27 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_conversiones(va_list argum, const char *cadena, int contador)
 	else if (cadena[contador] == 's')
 		return (ft_putstr(va_arg(argum, char *)));
 	else if (cadena[contador] == 'p')
-		return (ft_putpuntero(va_arg(argum, unsigned int)));
+		return (ft_putpuntero(va_arg(argum, unsigned long long)));
 	else if (cadena[contador] == 'd' || cadena[contador] == 'i')
 		return (ft_putnbr(va_arg(argum, int)));
 	else if (cadena[contador] == 'u')
