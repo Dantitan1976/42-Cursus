@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putpuntero.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 11:52:13 by dramirez          #+#    #+#             */
-/*   Updated: 2022/11/26 11:58:47 by dramirez         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:08:09 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_putpuntero(unsigned long puntero)
 {
 	int	longitud;
 
+	if (puntero == 0)
+		return (ft_putstr("0x0"));
 	if (!puntero)
 		return (ft_putstr("(null)"));
 	longitud = ft_putstr("0x");

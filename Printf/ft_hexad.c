@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hexad.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 21:10:36 by dramirez          #+#    #+#             */
-/*   Updated: 2022/11/26 11:50:00 by dramirez         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:03:45 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_hexad(unsigned long numero, char conversor)
+int	ft_hexad(unsigned long long numero, char conversor)
 {
 	int	num;
 

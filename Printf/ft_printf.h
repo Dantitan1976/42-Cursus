@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 17:18:12 by dramirez          #+#    #+#             */
-/*   Updated: 2022/11/26 12:12:35 by dramirez         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:05:25 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <stdarg.h>
 
@@ -27,7 +28,7 @@ int		ft_putnbr(int numero);
 int		ft_basenum(size_t numero, int base);
 char	*ft_numachar(unsigned int numero);
 int		ft_unsigned(unsigned int numero);
-int		ft_hexad(unsigned long numero, char conversor);
+int		ft_hexad(unsigned long long numero, char conversor);
 int		ft_putpuntero(unsigned long puntero);
 
 #endif
