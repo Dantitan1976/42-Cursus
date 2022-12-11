@@ -10,15 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 420 
+#  define BUFFER_SIZE 420
 # endif
+
+# define FD_MAX 1024
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 size_t	ft_strlen(const char *cadena);
 char	*ft_strchr(const char *cadena, int caract);
