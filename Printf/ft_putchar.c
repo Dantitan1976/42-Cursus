@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 16:13:39 by dramirez          #+#    #+#             */
-/*   Updated: 2022/11/27 16:39:32 by dramirez         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:45:32 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int	ft_putchar(char c)
 {
-	write (1, &c, 1);
-	return (1);
+	return (write (1, &c, 1));
 }

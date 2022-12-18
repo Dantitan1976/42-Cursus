@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 22:09:49 by dramirez          #+#    #+#             */
-/*   Updated: 2022/12/08 22:09:49 by dramirez         ###   ########.fr       */
+/*   Updated: 2022/12/18 17:52:10 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 #  define BUFFER_SIZE 420
 # endif
 
-# define FD_MAX 1024
+# ifndef FD_MAX
+#  define FD_MAX 1024
+# endif
 
 # include <stdlib.h>
 # include <unistd.h>
