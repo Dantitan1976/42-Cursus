@@ -6,7 +6,7 @@
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 22:09:49 by dramirez          #+#    #+#             */
-/*   Updated: 2022/12/08 22:09:49 by dramirez         ###   ########.fr       */
+/*   Updated: 2022/12/21 23:02:34 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 420 
+#  define BUFFER_SIZE 3 
 # endif
 
 # include <stdlib.h>
