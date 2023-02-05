@@ -6,13 +6,14 @@
 #    By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/06 10:11:21 by dramirez          #+#    #+#              #
-#    Updated: 2023/02/04 18:13:20 by dramirez         ###   ########.fr        #
+#    Updated: 2023/02/05 01:38:49 by dramirez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Nombramos al archivo ejecutable
 #Variable con los archivos del ejecutable
 SRCS =	./Libreria/ft_swap.c ./Libreria/ft_sa.c ./Libreria/ft_sb.c \
+	./Libreria/ft_isdigit.c ./Libreria/ft_strlen.c
 		ft_memcpy.c \
 		ft_memmove.c \
 		ft_strlcpy.c \
