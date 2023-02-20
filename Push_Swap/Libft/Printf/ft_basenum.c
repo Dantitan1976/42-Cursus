@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_basenum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 23:16:24 by dramirez          #+#    #+#             */
-/*   Updated: 2023/02/04 17:32:16 by dramirez         ###   ########.fr       */
+/*   Created: 2022/11/25 18:53:38 by dramirez          #+#    #+#             */
+/*   Updated: 2022/11/25 19:45:11 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "ft_printf.h"
 
-int	ft_isdigit(int c)
+int	ft_basenum(size_t numero, int base)
 {
-	if (!((c >= '0' && c <= '9')))
-		return (0);
-	return (1);
+	int	contador;
+
+	contador = 0;
+	if (!numero)
+		return (1);
+	while (numero > 0)
+	{
+		numero = numero / base;
+		contador++;
+	}
+	return (contador);
 }

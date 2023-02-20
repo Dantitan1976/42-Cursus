@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.c      +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 16:47:33 by dramirez          #+#    #+#             */
-/*   Updated: 2023/02/04 18:31:19 by dramirez         ###   ########.fr       */
+/*   Created: 2023/02/17 21:30:26 by dramirez          #+#    #+#             */
+/*   Updated: 2023/02/17 21:30:26 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#ifndef LIBFT_H
+#	define LIBFT_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
+//Librerias del Libft y GetNextLine
+#	include <stdlib.h>
+#	include <unistd.h>
 
+//Libreria del Printf
+# include <stdarg.h>
+# include <stdio.h>
+
+//Funciones del Libft
+int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
@@ -50,19 +56,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-int		ft_basenum(size_t numero, int base);
-int		ft_hexad(unsigned long long numero, char conversor);
-int		ft_putchar(char c);
-char	*ft_numachar(unsigned int numero);
-int		ft_numberlen(long int numero);
-int		ft_putnbr(int numero);
-int		ft_putstr(char *str);
-int		ft_putpuntero(unsigned long puntero);
-int		ft_unsigned(unsigned int numero);
-void	ft_swap(int *argv1, int *argv2);
-void	ft_sa(int *sa);
-void	ft_sb(int *sb);
-
 
 typedef struct s_list
 {
@@ -79,5 +72,34 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void*));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+//Funciones del Printf
+int		ft_printf(const char *str, ...);
+int		ft_conversiones(va_list argum, const char *cadena, int contador);
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
+int		ft_numberlen(long int numero);
+char	*ft_itoa_printf(long int numero);
+int		ft_putnbr(int numero);
+int		ft_basenum(size_t numero, int base);
+char	*ft_numachar(unsigned int numero);
+int		ft_unsigned(unsigned int numero);
+int		ft_hexad(unsigned long long numero, char conversor);
+int		ft_putpuntero(unsigned long puntero);
+
+//Funciones del Get Next Line
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 420
+# endif
+
+# ifndef FD_MAX
+#  define FD_MAX 1024
+# endif
+size_t	ft_strlen(const char *cadena);
+char	*ft_strchr(const char *cadena, int caract);
+char	*ft_strdup(const char *src);
+char	*ft_substr(const char *str, unsigned int inicio, size_t longitud);
+char	*ft_strjoin(const char *str1, const char *str2);
+char	*get_next_line(int fd);
 
 #endif
