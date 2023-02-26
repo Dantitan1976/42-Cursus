@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numberlen.c                                     :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 18:15:27 by dramirez          #+#    #+#             */
-/*   Updated: 2023/02/04 14:22:23 by dramirez         ###   ########.fr       */
+/*   Created: 2022/10/09 20:50:30 by dramirez          #+#    #+#             */
+/*   Updated: 2022/10/09 21:23:43 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_numberlen(long int numero)
+char	*ft_strdup(const char *s)
 {
-	int	posicion;
+	char	*duplicado;
+	size_t	longitud;
 
-	posicion = 0;
-	if (numero == 0)
-		posicion = 1;
-	if (numero < 0)
-	{
-		numero = -numero;
-		posicion++;
-	}
-	while (numero > 0)
-	{
-		numero = numero / 10;
-		posicion++;
-	}
-	return (posicion);
+	longitud = ft_strlen(s) + 1;
+	duplicado = malloc(sizeof(char) * longitud);
+	if (duplicado == NULL)
+		return (NULL);
+	duplicado = ft_memcpy(duplicado, s, longitud);
+	return (duplicado);
 }

@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 21:11:08 by dramirez          #+#    #+#             */
-/*   Updated: 2023/02/04 14:27:31 by dramirez         ###   ########.fr       */
+/*   Created: 2022/10/02 19:13:04 by dramirez          #+#    #+#             */
+/*   Updated: 2022/10/02 19:20:02 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putnbr(int numero)
+int	ft_toupper(int c)
 {
-	char	*cadena;
-	int		longitud;
-
-	cadena = ft_itoa(numero);
-	longitud = ft_putstr(cadena);
-	free(cadena);
-	return (longitud);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	else
+		return (c);
 }

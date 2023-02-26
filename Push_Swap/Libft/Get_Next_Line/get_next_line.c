@@ -6,7 +6,7 @@
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 22:08:56 by dramirez          #+#    #+#             */
-/*   Updated: 2022/12/11 09:38:00 by dramirez         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:52:19 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,20 +65,20 @@ char	*lib_estatica(char *v_estatica)
 
 char	*get_next_line(int fd)
 {
-	static char	*v_estatica;
+	static char	*v_estatica[FD_MAX + 1];
 	char		*linea;
 
-	if (BUFFER_SIZE < 1 || fd < 0)
+	if (BUFFER_SIZE < 1 || fd < 0 || fd > FD_MAX)
 		return (NULL);
-	if (!v_estatica)
-		v_estatica = ft_strdup("");
-	if (!v_estatica)
+	if (!v_estatica[fd])
+		v_estatica[fd] = ft_strdup("");
+	if (!v_estatica[fd])
 		return (NULL);
-	if (!ft_strchr(v_estatica, '\n'))
-		v_estatica = ft_leerfile(fd, v_estatica);
-	if (!v_estatica)
+	if (!ft_strchr(v_estatica[fd], '\n'))
+		v_estatica[fd] = ft_leerfile(fd, v_estatica[fd]);
+	if (!v_estatica[fd])
 		return (NULL);
-	linea = copiar_linea(v_estatica);
-	v_estatica = lib_estatica(v_estatica);
+	linea = copiar_linea(v_estatica[fd]);
+	v_estatica[fd] = lib_estatica(v_estatica[fd]);
 	return (linea);
 }

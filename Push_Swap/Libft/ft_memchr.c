@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_basenum.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 18:53:38 by dramirez          #+#    #+#             */
-/*   Updated: 2023/02/04 12:59:53 by dramirez         ###   ########.fr       */
+/*   Created: 2022/10/08 10:20:40 by dramirez          #+#    #+#             */
+/*   Updated: 2022/10/08 10:46:19 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_basenum(size_t numero, int base)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	contador;
+	unsigned char	*cadena;
+	size_t			contador;
 
+	cadena = (unsigned char *)s;
 	contador = 0;
-	if (!numero)
-		return (1);
-	while (numero > 0)
+	while (contador < n)
 	{
-		numero = numero / base;
+		if (cadena[contador] == (unsigned char)c)
+			return ((void *)&cadena[contador]);
 		contador++;
 	}
-	return (contador);
+	return (NULL);
 }

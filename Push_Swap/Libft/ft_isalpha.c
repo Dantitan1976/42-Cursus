@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 15:32:45 by dramirez          #+#    #+#             */
-/*   Updated: 2023/02/04 15:57:08 by dramirez         ###   ########.fr       */
+/*   Created: 2022/09/22 22:14:19 by dramirez          #+#    #+#             */
+/*   Updated: 2022/09/22 22:14:19 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	ft_swap(int *argv1, int *argv2)
+int	ft_isalpha(int c)
 {
-	int	temporal;
-
-	temporal = *argv1;
-	*argv1 = *argv2;
-	*argv2 = temporal;
+	if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')))
+		return (0);
+	return (1);
 }

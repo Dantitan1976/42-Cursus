@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putpuntero.c                                    :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/26 11:52:13 by dramirez          #+#    #+#             */
-/*   Updated: 2022/11/27 17:08:09 by dramirez         ###   ########.fr       */
+/*   Created: 2022/11/06 10:10:48 by dramirez          #+#    #+#             */
+/*   Updated: 2022/11/06 10:19:35 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putpuntero(unsigned long puntero)
+int	ft_lstsize(t_list *lst)
 {
 	int	longitud;
 
-	if (puntero == 0)
-		return (ft_putstr("0x0"));
-	if (!puntero)
-		return (ft_putstr("(null)"));
-	longitud = ft_putstr("0x");
-	longitud += ft_hexad(puntero, 'x');
+	longitud = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		longitud++;
+	}
 	return (longitud);
 }

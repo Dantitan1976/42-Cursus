@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexad.c                                         :+:      :+:    :+:   */
+/*   ft_stlcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 21:10:36 by dramirez          #+#    #+#             */
-/*   Updated: 2023/02/04 13:03:07 by dramirez         ###   ########.fr       */
+/*   Created: 2022/10/02 13:30:26 by dramirez          #+#    #+#             */
+/*   Updated: 2022/10/02 16:48:39 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_hexad(unsigned long long numero, char conversor)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	num;
+	size_t	posicion;
 
-	num = ft_basenum(numero, 16);
-	if (numero >= 16)
+	if (!size)
+		return (ft_strlen(src));
+	posicion = 0;
+	while (src[posicion] && (posicion < size -1))
 	{
-		ft_hexad(numero / 16, conversor);
-		ft_hexad(numero % 16, conversor);
+		dst[posicion] = src[posicion];
+		posicion++;
 	}
-	else
-	{
-		if (numero < 10)
-			ft_putchar(numero + '0');
-		else if (conversor == 'x')
-			ft_putchar(numero - 10 + 'a');
-		else if (conversor == 'X')
-			ft_putchar(numero - 10 + 'A');
-	}
-	return (num);
+	dst[posicion] = 0;
+	return (ft_strlen(src));
 }

@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 19:31:36 by dramirez          #+#    #+#             */
-/*   Updated: 2023/02/20 21:39:35 by dramirez         ###   ########.fr       */
+/*   Created: 2022/10/30 19:09:49 by dramirez          #+#    #+#             */
+/*   Updated: 2022/10/30 20:11:17 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "libft.h"
+#include <unistd.h>
 
-void	ft_error(void)
+void	ft_putchar_fd(char c, int fd)
 {
-	ft_putstr_fd("Error\n", 2);
-	exit (EXIT_FAILURE);
+	write(fd, &c, 1);
 }
-
-/*Salida para errores*/

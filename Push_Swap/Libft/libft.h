@@ -6,16 +6,16 @@
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 21:30:26 by dramirez          #+#    #+#             */
-/*   Updated: 2023/02/17 21:30:26 by dramirez         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:47:10 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#	define LIBFT_H
+# define LIBFT_H
 
 //Librerias del Libft y GetNextLine
-#	include <stdlib.h>
-#	include <unistd.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 //Libreria del Printf
 # include <stdarg.h>
@@ -95,6 +95,7 @@ int		ft_putpuntero(unsigned long puntero);
 # ifndef FD_MAX
 #  define FD_MAX 1024
 # endif
+
 size_t	ft_strlen(const char *cadena);
 char	*ft_strchr(const char *cadena, int caract);
 char	*ft_strdup(const char *src);
