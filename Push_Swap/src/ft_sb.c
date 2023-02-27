@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.c      +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:09:30 by dramirez          #+#    #+#             */
-/*   Updated: 2023/02/04 18:12:01 by dramirez         ###   ########.fr       */
+/*   Updated: 2023/02/26 23:45:39 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "../include/push_swap.h"
 
 void	ft_sb(int *sb)
 {

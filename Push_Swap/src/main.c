@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 22:14:19 by dramirez          #+#    #+#             */
-/*   Updated: 2022/09/22 22:14:19 by dramirez         ###   ########.fr       */
+/*   Created: 2023/02/27 00:13:36 by dramirez          #+#    #+#             */
+/*   Updated: 2023/02/27 00:13:36 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/push_swap.h"
 
-int	ft_isalpha(int c)
+int	main(int argc, char **argv)
 {
-	if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')))
-		return (0);
-	return (1);
-}
+	char	**cadena_split;
+
+	if (argc < 2)
+		return(0);
+	else if (argc == 2)
+	{
+		cadena_split = ft_split(argv[1], ' ');
+		if (!cadena_split[0])
+			ft_error();
+		ft_check_args(ft_numseparad(argv[1], ' '), cadena_split);
+	}
+	else if (argc > 2)
+		ft_check_args_int(argc, argv);
+	return (0);		
+}			

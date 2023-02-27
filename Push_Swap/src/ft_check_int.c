@@ -123,27 +123,8 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }*/
-void	ft_putstr_fd(char *s, int fd)
-{
-	int	posicion;
 
-	posicion = 0;
-	while (s[posicion])
-	{
-		write(fd, &s[posicion], 1);
-		posicion++;
-	}
-}
-
-void	ft_error(void)
-{
-	ft_putstr_fd("Error\n", 2);
-	exit (EXIT_FAILURE);
-}
-
-/*Salida para errores*/
-
-char	ft_check_args_int(int argc, char **argv)
+void	ft_check_args_int(int argc, char **argv)
 {
 	int	num_arg;
 
@@ -151,17 +132,16 @@ char	ft_check_args_int(int argc, char **argv)
 	while (num_arg < argc)
 	{
 		if (ft_check_num(argv[num_arg]) == 'f' 
-				|| ft_check_int(argv[num_arg]) > 2147483647 
-					|| ft_check_int(argv[num_arg]) < -2147483647)
+				|| (ft_check_int(argv[num_arg]) > 2147483647 
+					|| ft_check_int(argv[num_arg]) < -2147483648))
 			ft_error();
 	num_arg++;
 	}
 	if (ft_check_dobles_int(argc, argv) == 'd')
 		ft_error();
-	return ('r');
 }
 
-/*Chequeamos que todos son números y que no hay números duplicados como int*/
+/*Chequeamos que todos son números y que no hay números duplicados como int
 int	main(int argc, char **argv)
 {
 	int	argumentos;
@@ -175,4 +155,4 @@ int	main(int argc, char **argv)
 		argumentos++;
 	}
 	return (0);
-}
+}*/

@@ -25,10 +25,10 @@
 # include <unistd.h>
 # include <limits.h>
 
-size_t	ft_strlen(const char *cadena);
+size_t	ft_strlengnl(const char *cadena);
 char	*ft_strchr(const char *cadena, int caract);
 char	*ft_strdup(const char *src);
-char	*ft_substr(const char *str, unsigned int inicio, size_t longitud);
+char	*ft_substrgnl(const char *str, unsigned int inicio, size_t longitud);
 char	*ft_strjoin(const char *str1, const char *str2);
 char	*get_next_line(int fd);
 

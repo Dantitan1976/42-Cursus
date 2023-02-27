@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *cadena)
+size_t	ft_strlengnl(const char *cadena)
 {
 	size_t	contador;
 
@@ -38,7 +38,7 @@ char	*ft_strdup(const char *src)
 	char	*nueva;
 	int		longitud;
 
-	nueva = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
+	nueva = (char *)malloc(sizeof(char) * (ft_strlengnl(src) + 1));
 	if (!nueva)
 		return (NULL);
 	longitud = 0;
@@ -51,13 +51,13 @@ char	*ft_strdup(const char *src)
 	return (nueva);
 }
 
-char	*ft_substr(const char *str, unsigned int inicio, size_t longitud)
+char	*ft_substrgnl(const char *str, unsigned int inicio, size_t longitud)
 {
 	char	*nueva;
 	size_t	cad_long;
 	size_t	contador;
 
-	cad_long = ft_strlen(str);
+	cad_long = ft_strlengnl(str);
 	if (inicio >= cad_long)
 		return (ft_strdup(""));
 	if (longitud > cad_long - inicio)
@@ -84,7 +84,7 @@ char	*ft_strjoin(const char *str1, const char *str2)
 
 	if (!str1 || !str2)
 		return (NULL);
-	long_nueva = ft_strlen(str1) + ft_strlen(str2);
+	long_nueva = ft_strlengnl(str1) + ft_strlengnl(str2);
 	nueva = (char *)malloc(sizeof(char) * (long_nueva + 1));
 	if (!nueva)
 		return (NULL);

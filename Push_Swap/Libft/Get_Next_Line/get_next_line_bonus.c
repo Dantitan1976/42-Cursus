@@ -49,7 +49,7 @@ char	*copiar_linea(char *v_estatica)
 	contador = 0;
 	while (v_estatica[contador] && v_estatica[contador] != '\n')
 		contador++;
-	return (ft_substr(v_estatica, 0, contador + 1));
+	return (ft_substrgnl(v_estatica, 0, contador + 1));
 }
 
 char	*lib_estatica(char *v_estatica)
