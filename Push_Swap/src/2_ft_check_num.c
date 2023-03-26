@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_num.c                                     :+:      :+:    :+:   */
+/*   2_ft_check_num.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 23:33:43 by dramirez          #+#    #+#             */
-/*   Updated: 2023/02/26 23:59:41 by dramirez         ###   ########.fr       */
+/*   Updated: 2023/03/27 00:04:57 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ char	ft_check_dobles(int argc, char **argv)
 		fila_arg = 0;
 		while (fila_arg < argc)
 		{
-			if (ft_atoi(argv[num_arg]) == ft_atoi(argv[fila_arg]) && num_arg != fila_arg)
+			if (ft_atoi(argv[num_arg]) == ft_atoi(argv[fila_arg])
+				&& num_arg != fila_arg)
 				return ('d');
 			fila_arg++;
 		}
@@ -33,6 +34,7 @@ char	ft_check_dobles(int argc, char **argv)
 	}
 	return (resultado);
 }
+
 /*Chequeamos los dobles de una cadena de char
 int	main(int argc, char **argv)
 {
@@ -49,6 +51,7 @@ int	main(int argc, char **argv)
 	return (0);
 }
 */
+
 void	ft_check_args(int argc, char **argv)
 {
 	int	num_arg;
@@ -56,14 +59,14 @@ void	ft_check_args(int argc, char **argv)
 	num_arg = 0;
 	while (num_arg < argc)
 	{
-		if (ft_check_num(argv[num_arg]) == 'f' 
-				|| (ft_check_int(argv[num_arg]) > 2147483647 
-					|| ft_check_int(argv[num_arg]) < -2147483648))
-			ft_error();
+		if (ft_check_num(argv[num_arg]) == 'f'
+			|| (ft_check_int(argv[num_arg]) > 2147483647
+				|| ft_check_int(argv[num_arg]) < -2147483648))
+			ft_error(NULL, NULL);
 	num_arg++;
 	}
 	if (ft_check_dobles(argc, argv) == 'd')
-		ft_error();
+		ft_error(NULL, NULL);
 }
 
 /*int	main(int argc, char **argv)

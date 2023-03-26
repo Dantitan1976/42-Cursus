@@ -12,13 +12,20 @@
 
 #include "../include/push_swap.h"
 
+int	ft_num_abs(int numero)
+{
+	if (numero < 0)
+		return (numero * -1);
+	return (numero);
+}
+
 char	ft_check_num(char *str)
 {
 	int	posicion;
 
 	posicion = 0;
 	if ((str[posicion] == '-' || str[posicion] == '+')
-			|| (str[posicion] >= '0' && str[posicion] <= '9'))
+		|| (str[posicion] >= '0' && str[posicion] <= '9'))
 		posicion++;
 	else
 		return ('f');
@@ -49,8 +56,8 @@ int	main(void)
 
 long int	ft_check_int(char *str)
 {
-	int	cont;
-	int	signo;
+	int			cont;
+	int			signo;
 	long int	numeros;
 
 	cont = 0;
@@ -99,7 +106,8 @@ char	ft_check_dobles_int(int argc, char **argv)
 		fila_arg = 1;
 		while (fila_arg < argc)
 		{
-			if (ft_check_int(argv[num_arg]) == ft_check_int(argv[fila_arg]) && num_arg != fila_arg)
+			if (ft_check_int(argv[num_arg]) == ft_check_int(argv[fila_arg])
+				&& num_arg != fila_arg)
 				return ('d');
 			fila_arg++;
 		}
@@ -131,14 +139,14 @@ void	ft_check_args_int(int argc, char **argv)
 	num_arg = 1;
 	while (num_arg < argc)
 	{
-		if (ft_check_num(argv[num_arg]) == 'f' 
-				|| (ft_check_int(argv[num_arg]) > 2147483647 
-					|| ft_check_int(argv[num_arg]) < -2147483648))
-			ft_error();
+		if (ft_check_num(argv[num_arg]) == 'f'
+			|| (ft_check_int(argv[num_arg]) > 2147483647
+				|| ft_check_int(argv[num_arg]) < -2147483648))
+			ft_error(NULL, NULL);
 	num_arg++;
 	}
 	if (ft_check_dobles_int(argc, argv) == 'd')
-		ft_error();
+		ft_error(NULL, NULL);
 }
 
 /*Chequeamos que todos son números y que no hay números duplicados como int

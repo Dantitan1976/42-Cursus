@@ -10,13 +10,20 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC =		src/ft_check_int_utils.c \
-		src/ft_check_int.c \
-		src/ft_check_num_utils.c \
-		src/ft_check_num_utils2.c \
-		src/ft_check_num.c \
-		src/ft_sa.c \
-		src/ft_sb.c \
+SRC =	src/1_ft_check_int.c \
+		src/2_ft_check_num.c \
+		src/3_ft_listas_utils.c \
+		src/3_ft_listas_utils2.c \
+		src/4_ft_push.c \
+		src/4_ft_rotar_reverso.c \
+		src/4_ft_rotar.c \
+		src/4_ft_swap \
+		src/5_ft_mover.c \
+		src/5_ft_posiciones_coste.c \
+		src/5_ft_posiciones.c \
+		src/6_ft_ordenar_3.c \
+		src/6_ft_ordenar_3mas.c \
+		src/ft_ordenar_utils.c \
 		src/main.c \
 		
 OSRC = $(SRC:.c=.o)

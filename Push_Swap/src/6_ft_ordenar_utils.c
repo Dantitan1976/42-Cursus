@@ -61,3 +61,31 @@ int	main(void)
 	}
 	return (0);
 }*/
+
+/*	ft_check_orden:
+*	Chequea si la pila está ordenada
+*	Devuelve 0 si NO ESTÁ ORDENADA y 1 si SÍ LO ESTÁ*/
+int	ft_check_orden(t_bloques *bloque)
+{
+	while (bloque->siguiente != NULL)
+	{
+		if(bloque->numero > bloque->siguiente->numero)
+			return (0);
+		bloque = bloque->siguiente;
+	}
+	return (1);
+}
+
+/*	push_swap:
+*	Elige el metodo de ordenación dependiendo del número
+*	de valores a ordenar
+*/
+static void ft_push_swap(t_bloques **bloque_a, t_bloques **bloque_b, int bloque_size)
+{
+	if (bloque_size == 2 && !ft_check_orden(*bloque_a))
+		ft_sa(bloque_a);
+	else if (bloque_size == 3 && !ft_check_orden(*bloque_a))
+		ft_ordenar_3(bloque_a);
+	else if (bloque_size > 3 && !ft_check_orden(*bloque_a))
+		ft_ordenar_3mas(bloque_a, bloque_b);
+}
