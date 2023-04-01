@@ -17,13 +17,13 @@ SRC =	src/1_ft_check_int.c \
 		src/4_ft_push.c \
 		src/4_ft_rotar_reverso.c \
 		src/4_ft_rotar.c \
-		src/4_ft_swap \
+		src/4_ft_swap.c \
 		src/5_ft_mover.c \
 		src/5_ft_posiciones_coste.c \
 		src/5_ft_posiciones.c \
 		src/6_ft_ordenar_3.c \
 		src/6_ft_ordenar_3mas.c \
-		src/ft_ordenar_utils.c \
+		src/6_ft_ordenar_utils.c \
 		src/main.c \
 		
 OSRC = $(SRC:.c=.o)

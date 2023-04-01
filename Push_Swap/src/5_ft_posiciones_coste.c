@@ -30,8 +30,8 @@ void	ft_coste_ba(t_bloques **bloque_a, t_bloques **bloque_b)
 
 	temp_a = *bloque_a;
 	temp_b = *bloque_b;
-	bloque_a_size = ft_lstsize(temp_a);
-	bloque_b_size = ft_lstsize(temp_b);
+	bloque_a_size = ft_lstsize_ps(temp_a);
+	bloque_b_size = ft_lstsize_ps(temp_b);
 	while (temp_b)
 	{
 		temp_b->coste_b = temp_b->posicion;

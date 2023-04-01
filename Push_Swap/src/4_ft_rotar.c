@@ -21,7 +21,7 @@ static void	rotar(t_bloques **bloque)
 
 	temporal = *bloque;
 	*bloque = (*bloque)->siguiente;
-	cola = ft_lstlast(*bloque);
+	cola = ft_lstlast_ps(*bloque);
 	temporal->siguiente = NULL;
 	cola->siguiente = temporal;
 }

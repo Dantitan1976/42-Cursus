@@ -43,3 +43,43 @@ void	ft_liberarbloques(t_bloques **bloque)
 	}
 	*bloque = NULL;
 }
+
+void	ft_lstadd_back_ps(t_bloques **lst, t_bloques *new)
+{
+	t_bloques	*ultimo;
+
+	if (!lst && !new)
+		return ;
+	else if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	ultimo = ft_lstlast_ps(*lst);
+	ultimo->siguiente = new;
+}
+
+t_bloques	*ft_lstlast_ps(t_bloques *lst)
+{
+	if (!lst)
+		return (NULL);
+	else
+	{
+		while (lst->siguiente)
+			lst = lst->siguiente;
+	}
+	return (lst);
+}
+
+int	ft_lstsize_ps(t_bloques *lst)
+{
+	int	longitud;
+
+	longitud = 0;
+	while (lst)
+	{
+		lst = lst->siguiente;
+		longitud++;
+	}
+	return (longitud);
+}

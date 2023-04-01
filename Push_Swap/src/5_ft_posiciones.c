@@ -131,7 +131,7 @@ static int	posicion_objetivo(t_bloques **bloque_a, int indice_bloqueb,
 void	ft_asigna_pos_obj(t_bloques **bloque_a, t_bloques **bloque_b)
 {
 	t_bloques	*temp_b;
-	int			*pos_obj;
+	int			pos_obj;
 
 	temp_b = *bloque_b;
 	asignar_posicion(bloque_a);

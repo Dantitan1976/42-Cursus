@@ -6,13 +6,13 @@
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 21:32:29 by dramirez          #+#    #+#             */
-/*   Updated: 2022/12/22 00:10:00 by dramirez         ###   ########.fr       */
+/*   Updated: 2023/04/01 09:47:29 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <stdio.h>
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	main(void)
 {

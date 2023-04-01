@@ -39,6 +39,7 @@ long int	ft_check_int(char *str);
 char		ft_check_dobles_int(int argc, char **argv);
 void		ft_check_args_int(int argc, char **argv);
 //2_ft_check_num.c
+int			ft_numseparad(char *str, char separador);
 //char		ft_check_num(char *str);
 char		ft_check_dobles(int argc, char **argv);
 //void		ft_putstr_fd(char *s, int fd);
@@ -53,54 +54,41 @@ t_bloques	*ft_lstpenultimo(t_bloques *pilas);
 //3_ft_listas_utils2.c
 void		ft_error(t_bloques **stack_a, t_bloques **stack_b);
 void		ft_liberarbloques(t_bloques **bloques);
+void		ft_lstadd_back_ps(t_bloques **lst, t_bloques *new);
+t_bloques	*ft_lstlast_ps(t_bloques *lst);
+int			ft_lstsize_ps(t_bloques *lst);
 //4_ft_push.c
-static void	push(t_bloques **origen, t_bloques **destino);
 void		ft_pa(t_bloques **bloque_a, t_bloques **bloque_b);
 void		ft_pb(t_bloques **bloque_a, t_bloques **bloque_b);
 //4_ft_rotar_reverso.c
-static void	ft_rotar_reverso(t_bloques **bloque);
 void		ft_rra(t_bloques **bloque_a);
 void		ft_rrb(t_bloques **bloque_b);
 void		ft_rrr(t_bloques **bloque_a, t_bloques **bloque_b);
 //4_ft_rotar.c
-static void	rotar(t_bloques **bloque);
 void		ft_ra(t_bloques **bloque_a);
 void		ft_rb(t_bloques **bloque_b);
 void		ft_rr(t_bloques **bloque_a, t_bloques **bloque_b);
 //4_ft_swap.c
-static void	swap(t_bloques *bloque);
 void		ft_sa(t_bloques **bloque_a);
 void		ft_sb(t_bloques **bloque_b);
 void		ft_ss(t_bloques **bloque_a, t_bloques **bloque_b);
 //5_ft_mover.c
-static void	ft_rotar_reverso_ambos(t_bloques **bloque_a, t_bloques **bloque_b,
-				int *coste_a, int *coste_b);
-static void	ft_rotar_ambos(t_bloques **bloque_a, t_bloques **bloque_b,
-				int *coste_a, int *coste_b);
-static void	ft_rotar_a(t_bloques **bloque_a, int *coste_a);
-static void	ft_rotar_b(t_bloques **bloque_b, int *coste_b);
 void		ft_mover(t_bloques **bloque_a, t_bloques **bloque_b,
 				int coste_a, int coste_b);
 //5_ft_posiciones_coste.c
 void		ft_coste_ba(t_bloques **bloque_a, t_bloques **bloque_b);
 void		ft_mov_mas_efic(t_bloques **bloque_a, t_bloques **bloque_b);
 //5_ft_posiciones.c
-static void	asignar_posicion(t_bloques **bloque);
 int			pos_indice_masbajo(t_bloques **bloque);
-static int	posicion_objetivo(t_bloques **bloque_a, int indice_bloqueb,
-				int posicion_objetivo, int indice_objetivo);
 void		ft_asigna_pos_obj(t_bloques **bloque_a, t_bloques **bloque_b);
 //6_ft_ordenar_3.c
-static int	ft_indice_mayor(t_bloques *bloque);
 void		ft_ordenar_3(t_bloques **bloque);
 //6_ft_ordenar_3mas.c
-static void	ft_todo_menostres(t_bloques **bloque_a, t_bloques **bloque_b);
-static void	ft_cambiar_bloque_a(t_bloques **bloque_a);
 void		ft_ordenar_3mas(t_bloques **bloque_a, t_bloques **bloque_b);
 //6_ft_ordenar_utils.c
-int			*ft_ordenar_array(int *numeros, int longitud);
+//int			*ft_ordenar_array(int *numeros, int longitud);
 int			ft_check_orden(t_bloques *bloque);
-static void	ft_push_swap(t_bloques **bloque_a, t_bloques **bloque_b,
-				int bloque_size);
+//main.c
+int			main(int argc, char **argv);
 
 #endif

@@ -6,11 +6,33 @@
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 23:33:43 by dramirez          #+#    #+#             */
-/*   Updated: 2023/03/27 00:04:57 by dramirez         ###   ########.fr       */
+/*   Updated: 2023/04/01 09:49:06 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+int	ft_numseparad(char *str, char separador)
+{
+	int	posicion;
+	int	cant_nums;
+
+	posicion = 0;
+	cant_nums = 0;
+	while (str[posicion])
+	{
+		if (str[posicion] != separador)
+		{
+			cant_nums++;
+			while (str[posicion] && str[posicion] != separador)
+				posicion++;
+			if (str[posicion] == '\0')
+				return (cant_nums);
+		}
+		posicion++;
+	}
+	return (cant_nums);
+}
 
 char	ft_check_dobles(int argc, char **argv)
 {

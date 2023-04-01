@@ -21,7 +21,7 @@ static void	ft_rotar_reverso(t_bloques **bloque)
 	t_bloques	*cola;
 	t_bloques	*anterior_cola;
 
-	cola = ft_lstlast(*bloque);
+	cola = ft_lstlast_ps(*bloque);
 	anterior_cola = ft_lstpenultimo(*bloque);
 	temporal = *bloque;
 	*bloque = cola;
@@ -45,5 +45,5 @@ void	ft_rrr(t_bloques **bloque_a, t_bloques **bloque_b)
 {
 	ft_rotar_reverso(bloque_a);
 	ft_rotar_reverso(bloque_b);
-	ft_rotar_reverso("rrr\n");
+	ft_putstr("rrr\n");
 }

@@ -51,13 +51,13 @@ t_bloques	*ft_datosenlista_int(int argc, char **argv)
 	{
 		numero = ft_atoi(argv[argumento]);
 		if (!bloque_a || !argumento)
-			return ;
+			return (0);
 		if (numero < INT_MIN || numero > INT_MAX)
 			ft_error(&bloque_a, NULL);
 		if (argumento == 1)
 			bloque_a = ft_nuevalista((int)numero);
 		else
-			ft_lstadd_back(&bloque_a, ft_nuevalista((int)numero));
+			ft_lstadd_back_ps(&bloque_a, ft_nuevalista((int)numero));
 		argumento++;
 	}
 	return (bloque_a);
@@ -78,13 +78,13 @@ t_bloques	*ft_datosenlista_num(int argc, char **argv)
 	{
 		numero = ft_atoi(argv[argumento]);
 		if (!bloque_a || !argumento)
-			return ;
+			return (0);
 		if (numero < INT_MIN || numero > INT_MAX)
 			ft_error(&bloque_a, NULL);
 		if (argumento == 1)
 			bloque_a = ft_nuevalista((int)numero);
 		else
-			ft_lstadd_back(&bloque_a, ft_nuevalista((int)numero));
+			ft_lstadd_back_ps(&bloque_a, ft_nuevalista((int)numero));
 		argumento++;
 	}
 	return (bloque_a);

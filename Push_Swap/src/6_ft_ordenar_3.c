@@ -26,7 +26,7 @@ static int	ft_indice_mayor(t_bloques *bloque)
 			index = bloque->indice;
 		bloque = bloque->siguiente;
 	}
-	return (index)	;
+	return (index);
 }
 
 /* ft_ordenar_3:
