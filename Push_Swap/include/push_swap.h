@@ -20,7 +20,8 @@
 *	posicion = posición del número en la lista
 *	posicion_objetivo = posición donde vamos a insertar el número a ordenar
 *	coste_a = coste de mover los elementos al Stack A
-*	coste_b = coste de mover los elementos en el Stack B*/
+*	coste_b = coste de mover los elementos en el Stack B
+*	puntero: Puntero al tipo de dato t_bloques para no usar punteros de punteros*/
 typedef struct s_bloques//Estructura de los bloques a y b
 {
 	struct s_bloques	*siguiente;
@@ -31,6 +32,8 @@ typedef struct s_bloques//Estructura de los bloques a y b
 	int					coste_a;
 	int					coste_b;
 }	t_bloques;
+
+typedef t_bloques		*t_puntero;
 
 //1_ft_check_int.c
 int			ft_num_abs(int numero);

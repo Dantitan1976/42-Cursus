@@ -122,8 +122,8 @@ void	ft_indices(t_bloques *pila_a, int longitud_pila)
 		}
 		if (mas_alto != NULL)
 			mas_alto->indice = longitud_pila;
+		longitud_pila--;
 	}
-	longitud_pila--;
 }
 
 t_bloques	*ft_lstpenultimo(t_bloques *pilas)
