@@ -57,8 +57,11 @@ int	main(int argc, char **argv)
 		bloque_a = ft_datosenlista_num(ft_numseparad(argv[1], ' '), split);
 		ft_imprimirlista(bloque_a);
 	}
-	ft_check_args_int(argc, argv);
-	bloque_a = ft_datosenlista_int(argc, argv);
+	else if (argc > 2)
+	{
+		ft_check_args_int(argc, argv);
+		bloque_a = ft_datosenlista_int(argc, argv);
+	}
 	bloque_b = NULL;
 	bloque_size = ft_lstsize_ps(bloque_a);
 	ft_indices(bloque_a, bloque_size + 1);
