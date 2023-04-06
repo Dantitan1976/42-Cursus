@@ -96,6 +96,12 @@ void	ft_ordenar_3mas(t_bloques **bloque_a, t_bloques **bloque_b)
 	int	indice_mayor;
 
 	indice_mayor = ft_indice_mayor(*bloque_a);
+	if ((*bloque_a)->indice == indice_mayor)
+	{
+		ft_ra(bloque_a);
+		if (ft_check_orden(*bloque_a))
+			return ;
+	}			
 	if ((*bloque_a)->indice != indice_mayor)
 	{
 		ft_todo_menostres(bloque_a, bloque_b);

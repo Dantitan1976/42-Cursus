@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 	int			bloque_size;
 	char		**split;
 
-	bloque_a = NULL;
+	bloque_b = NULL;
 	if (argc < 2)
 		return (0);
 	else if (argc == 2)
