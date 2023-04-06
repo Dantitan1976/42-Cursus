@@ -77,7 +77,7 @@ t_bloques	*ft_datosenlista_num(int argc, char **argv)
 		numero = ft_atoi(argv[argumento]);
 		if (numero < INT_MIN || numero > INT_MAX)
 			ft_error(&bloque_a, NULL);
-		if (argumento == 1)
+		if (argumento == 0)
 			bloque_a = ft_nuevalista((int)numero);
 		else
 			ft_lstadd_back_ps(&bloque_a, ft_nuevalista((int)numero));

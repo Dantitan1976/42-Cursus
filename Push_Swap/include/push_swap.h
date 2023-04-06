@@ -20,8 +20,7 @@
 *	posicion = posición del número en la lista
 *	posicion_objetivo = posición donde vamos a insertar el número a ordenar
 *	coste_a = coste de mover los elementos al Stack A
-*	coste_b = coste de mover los elementos en el Stack B
-*	puntero: Puntero al tipo de dato t_bloques para no usar punteros de punteros*/
+*	coste_b = coste de mover los elementos en el Stack B*/
 typedef struct s_bloques//Estructura de los bloques a y b
 {
 	struct s_bloques	*siguiente;
@@ -91,5 +90,6 @@ void		ft_ordenar_3mas(t_bloques **bloque_a, t_bloques **bloque_b);
 int			ft_check_orden(t_bloques *bloque);
 //main.c
 int			main(int argc, char **argv);
+void		ft_imprimirlista(t_bloques *bloque_a);
 
 #endif

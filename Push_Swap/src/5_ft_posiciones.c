@@ -116,6 +116,7 @@ static int	posicion_objetivo(t_bloques **bloque_a, int indice_bloqueb,
 	}
 	if (indice_objetivo != INT_MAX)
 		return (posicion_objetivo);
+	temp_a = *bloque_a;
 	while (temp_a)
 	{
 		if (temp_a->indice < indice_objetivo)
