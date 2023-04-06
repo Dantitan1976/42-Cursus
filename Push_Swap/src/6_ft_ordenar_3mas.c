@@ -98,14 +98,17 @@ void	ft_ordenar_3mas(t_bloques **bloque_a, t_bloques **bloque_b)
 	indice_mayor = ft_indice_mayor(*bloque_a);
 	if ((*bloque_a)->indice == indice_mayor)
 		ft_ra(bloque_a);
-	ft_todo_menostres(bloque_a, bloque_b);
-	ft_ordenar_3(bloque_a);
-	while (*bloque_b)
+	if ((*bloque_a)->indice != indice_mayor)
 	{
-		ft_asigna_pos_obj(bloque_a, bloque_b);
-		ft_coste_ba(bloque_a, bloque_b);
-		ft_mov_mas_efic(bloque_a, bloque_b);
+		ft_todo_menostres(bloque_a, bloque_b);
+		ft_ordenar_3(bloque_a);
+		while (*bloque_b)
+		{
+			ft_asigna_pos_obj(bloque_a, bloque_b);
+			ft_coste_ba(bloque_a, bloque_b);
+			ft_mov_mas_efic(bloque_a, bloque_b);
+		}
+		if (!ft_check_orden(*bloque_a))
+			ft_cambiar_bloque_a(bloque_a);
 	}
-	if (!ft_check_orden(*bloque_a))
-		ft_cambiar_bloque_a(bloque_a);
 }

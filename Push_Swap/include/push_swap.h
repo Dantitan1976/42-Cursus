@@ -33,8 +33,6 @@ typedef struct s_bloques//Estructura de los bloques a y b
 	int					coste_b;
 }	t_bloques;
 
-typedef t_bloques		*t_puntero;
-
 //1_ft_check_int.c
 int			ft_num_abs(int numero);
 char		ft_check_num(char *str);

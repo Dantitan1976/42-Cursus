@@ -18,7 +18,7 @@ t_bloques	*ft_nuevalista(int nuevo_nodo)
 {
 	t_bloques	*nuevalst;
 
-	nuevalst = malloc (sizeof * nuevalst);
+	nuevalst = malloc (sizeof(t_bloques));
 	if (!nuevalst)
 		return (NULL);
 	nuevalst->numero = nuevo_nodo;
@@ -40,27 +40,25 @@ t_bloques	*ft_nuevalista(int nuevo_nodo)
 *	Si hay más de un arg.: lo añadimos al final de la nueva lista: fila 59*/
 t_bloques	*ft_datosenlista_int(int argc, char **argv)
 {
-	t_bloques	*bloque_a;
+	t_bloques	*cabeza;
 	int			argumento;
 	long int	numero;
 
-	bloque_a = NULL;
+	cabeza = NULL;
 	argumento = 1;
 	numero = 0;
 	while (argumento < argc)
 	{
 		numero = ft_atoi(argv[argumento]);
-		if (!bloque_a || !argumento)
-			return (0);
 		if (numero < INT_MIN || numero > INT_MAX)
-			ft_error(&bloque_a, NULL);
+			ft_error(&cabeza, NULL);
 		if (argumento == 1)
-			bloque_a = ft_nuevalista((int)numero);
+			cabeza = ft_nuevalista((int)numero);
 		else
-			ft_lstadd_back_ps(&bloque_a, ft_nuevalista((int)numero));
+			ft_lstadd_back_ps(&cabeza, ft_nuevalista((int)numero));
 		argumento++;
 	}
-	return (bloque_a);
+	return (cabeza);
 }
 
 /*Metemos en la lista del Stack A los int metidos
@@ -77,8 +75,6 @@ t_bloques	*ft_datosenlista_num(int argc, char **argv)
 	while (argumento < argc)
 	{
 		numero = ft_atoi(argv[argumento]);
-		if (!bloque_a || !argumento)
-			return (0);
 		if (numero < INT_MIN || numero > INT_MAX)
 			ft_error(&bloque_a, NULL);
 		if (argumento == 1)

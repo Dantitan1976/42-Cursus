@@ -6,7 +6,7 @@
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 23:33:43 by dramirez          #+#    #+#             */
-/*   Updated: 2023/04/01 09:49:06 by dramirez         ###   ########.fr       */
+/*   Updated: 2023/04/04 11:39:37 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	ft_check_args(int argc, char **argv)
 	{
 		if (ft_check_num(argv[num_arg]) == 'f'
 			|| (ft_check_int(argv[num_arg]) > 2147483647
-				|| ft_check_int(argv[num_arg]) < -2147483648))
+				|| ft_check_int(argv[num_arg]) < -2147483647))
 			ft_error(NULL, NULL);
 	num_arg++;
 	}

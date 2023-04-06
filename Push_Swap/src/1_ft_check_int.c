@@ -134,14 +134,14 @@ int	main(int argc, char **argv)
 
 void	ft_check_args_int(int argc, char **argv)
 {
-	int	num_arg;
+	long int	num_arg;
 
 	num_arg = 1;
 	while (num_arg < argc)
 	{
 		if (ft_check_num(argv[num_arg]) == 'f'
 			|| (ft_check_int(argv[num_arg]) > 2147483647
-				|| ft_check_int(argv[num_arg]) < -2147483648))
+				|| ft_check_int(argv[num_arg]) < -2147483647))
 			ft_error(NULL, NULL);
 	num_arg++;
 	}

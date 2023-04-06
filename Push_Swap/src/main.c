@@ -6,7 +6,7 @@
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 00:13:36 by dramirez          #+#    #+#             */
-/*   Updated: 2023/02/27 00:13:36 by dramirez         ###   ########.fr       */
+/*   Updated: 2023/04/05 00:57:50 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,13 @@ static void	ft_push_swap(t_bloques **bloque_a, t_bloques **bloque_b,
 		ft_ordenar_3mas(bloque_a, bloque_b);
 }
 
-void	ft_imprimirlista(t_puntero bloque_a)
+void	ft_imprimirlista(t_bloques *cabeza)
 {
-	while (bloque_a != NULL)
+	while (cabeza != NULL)
 	{
-		printf("%4d\n", bloque_a->numero);
-		bloque_a = bloque_a->siguiente;
+		printf("%d\n", cabeza->numero);
+		cabeza = cabeza->siguiente;
 	}
-	
 }
 
 int	main(int argc, char **argv)
