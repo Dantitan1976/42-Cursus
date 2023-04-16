@@ -1,6 +1,6 @@
 NAME = libft.a
 
-LIBFT=		libft/ft_isalpha.c \
+LIBFT =		libft/ft_isalpha.c \
 			libft/ft_isdigit.c \
 			libft/ft_isalnum.c \
 			libft/ft_isascii.c \

@@ -80,6 +80,20 @@ long int	ft_check_int(char *str)
 	}
 	return (numeros * signo);
 }
+/*Chequeamos que todos son números como una cadena de chars
+int	main(void)
+{
+	printf("ft_check_int: %c\n", ft_check_int("123456"));
+	printf("ft_check_int: %c\n", ft_check_int("123456a4445"));
+	printf("ft_check_int: %c\n", ft_check_int("Hola Mundo"));
+	printf("ft_check_int: %c\n", ft_check_int("-123456"));
+	printf("ft_check_int: %c\n", ft_check_int("+123456"));
+	printf("ft_check_int: %c\n", ft_check_int(" ---+--+1234ab567"));
+	printf("ft_check_int: %c\n", ft_check_int("     +42"));
+	printf("ft_check_int: %c\n", ft_check_int("\t\n\v\f\r 42"));
+	printf("ft_check_int: %c\n", ft_check_int("5"));
+	return (0);
+}*/
 
 char	ft_check_dobles_int(int argc, char **argv)
 {
