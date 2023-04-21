@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   minitalk_bonus.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: dramirez <dramirez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 22:14:19 by dramirez          #+#    #+#             */
-/*   Updated: 2022/09/22 22:14:19 by dramirez         ###   ########.fr       */
+/*   Created: 2023/04/21 18:38:20 by dramirez          #+#    #+#             */
+/*   Updated: 2023/04/21 18:38:20 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef MINITALK_BONUS_H
+# define MINITALK_BONUS_H
 
-int	ft_isalpha(int c)
-{
-	if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')))
-		return (0);
-	return (1);
-}
+# include <signal.h>
+# include <sys/types.h>
+
+# include "../libft/libft.h"
+#endif

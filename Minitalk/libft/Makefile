@@ -71,7 +71,7 @@ PRINTF=			printf/ft_printf.c \
 GNL=		get_next_line/get_next_line_bonus.c \
 			get_next_line/get_next_line_utils_bonus.c \
 
-PUSHSWAP=	push_swap/src/1_ft_check_int.c \
+#PUSHSWAP=	push_swap/src/1_ft_check_int.c \
 			push_swap/src/2_ft_check_num.c \
 			push_swap/src/3_ft_listas_utils.c \
 			push_swap/src/3_ft_listas_utils2.c \
@@ -93,7 +93,7 @@ OBJS_PRINTF = $(PRINTF:.c=.o)
 
 OBJS_GNL = $(GNL:.c=.o)
 
-OBJS_PUSHSWAP = $(PUSHSWAP:.c=.o)
+#OBJS_PUSHSWAP = $(PUSHSWAP:.c=.o)
 
 AR = ar -rcs
 
@@ -110,12 +110,12 @@ RM = rm -f
 all: $(NAME)
 
 #Compilamos la libreria
-$(NAME): $(OBJS_LIBFT) $(OBJS_PRINTF) $(OBJS_GNL) $(OBJS_PUSHSWAP)
-	$(AR) $(NAME) $(OBJS_LIBFT) $(OBJS_PRINTF) $(OBJS_GNL) $(OBJS_PUSHSWAP)
+$(NAME): $(OBJS_LIBFT) $(OBJS_PRINTF) $(OBJS_GNL)
+	$(AR) $(NAME) $(OBJS_LIBFT) $(OBJS_PRINTF) $(OBJS_GNL)
 
 #Borramos los objetos que no necesitamos
 clean:
-	$(RM) $(OBJS_LIBFT) $(OBJS_PRINTF) $(OBJS_GNL) $(OBJS_PUSHSWAP)
+	$(RM) $(OBJS_LIBFT) $(OBJS_PRINTF) $(OBJS_GNL)
 
 fclean:	clean
 		$(RM) $(NAME)
