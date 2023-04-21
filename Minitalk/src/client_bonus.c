@@ -56,7 +56,7 @@ int	main(int argc, char **argv)
 	signal(SIGUSR1, ft_handler_client);
 	signal(SIGUSR2, ft_handler_client);
 	posicion = 0;
-	while (cadena[posicion] + 1)
+	while (cadena[posicion])
 	{
 		ft_char_signal(cadena[posicion], pid);
 		posicion++;
