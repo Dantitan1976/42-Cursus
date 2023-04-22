@@ -34,20 +34,22 @@ int	main(int argc, char **argv)
 	int		posicion;
 	char	*cadena;
 
+	posicion = 0;
+	cadena = argv[2];
+	if (argc == 3)
+	{
+		pid = ft_atoi(argv[1]);
+		while (cadena[posicion] != '\0')
+		{
+			ft_char_signal(cadena[posicion], pid);
+			posicion++;
+		}
+		ft_char_signal('\n', pid);
+	}
 	if (argc != 3 || ft_strlen(argv[2]) == 0)
 	{
-		ft_printf("Error. Debe introducir un PID y un mensaje\n");
-		return (0);
-	}
-	pid = ft_atoi(argv[1]);
-	cadena = argv[2];
-	ft_printf("Cliente: PID: %d\n", pid);
-	ft_printf("Cliente: Mensaje: %s\n", cadena);
-	posicion = 0;
-	while (cadena[posicion])
-	{
-		ft_char_signal(cadena[posicion], pid);
-		posicion++;
+		ft_printf("\033[0;91mError. Introduzca PID y un mensaje\033[0;39m\n");
+		return (1);
 	}
 	return (0);
 }

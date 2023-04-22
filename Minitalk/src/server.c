@@ -33,18 +33,20 @@ int	main(int argc, char **argv)
 	int	pid;
 
 	(void)argv;
-	if (argc > 1)
+	if (argc != 1)
 	{
-		ft_printf("Error. El servidor no maneja argumentos\n");
-		ft_printf("Se introducen en el cliente");
+		ft_printf("\033[0;91mError. El servidor no maneja argumentos\n");
+		ft_printf("Se introducen en el cliente\033[0;39m\n");
+		ft_printf("Escriba ./server\033[0;39m\n");
 		return (0);
 	}
 	pid = getpid();
 	ft_printf("PID del servidor: %d\n", pid);
-	signal(SIGUSR1, ft_handler);
-	signal(SIGUSR2, ft_handler);
-	while (1)
+	ft_printf("Esperando mensaje...\n");
+	while (argc == 1)
 	{
+		signal(SIGUSR1, ft_handler);
+		signal(SIGUSR2, ft_handler);
 		pause();
 	}
 	return (0);

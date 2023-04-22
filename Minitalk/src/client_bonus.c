@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dramirez <dramirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 21:16:20 by dramirez          #+#    #+#             */
-/*   Updated: 2023/04/14 21:16:20 by dramirez         ###   ########.fr       */
+/*   Created: 2023/04/23 01:16:07 by dramirez          #+#    #+#             */
+/*   Updated: 2023/04/23 01:16:07 by dramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void	ft_handler_client(int sig_cliente)
 {
-	static int	byte = 0;
+	static int	signal = 0;
 
 	if (sig_cliente == SIGUSR1)
-		byte++;
-	if (sig_cliente == SIGUSR2)
-		ft_printf("Mensaje recibido. Tamaño bytes:%d\n", byte);
+		signal++;
+	else if (sig_cliente == SIGUSR2)
+		{
+			ft_printf("\033[1;92mMensaje recibido.\033[0;39m\n");
+			exit(0);
+		}
 }
 
 void	ft_char_signal(char char_env, int pid)
@@ -42,24 +45,24 @@ int	main(int argc, char **argv)
 {
 	int		pid;
 	int		posicion;
-	char	*cadena;
 
-	if (argc != 3 || ft_strlen(argv[2]) == 0)
+	if (argc == 3)
 	{
-		ft_printf("Error. Debe introducir un PID y un mensaje\n");
-		return (0);
+		pid = ft_atoi(argv[1]);
+		posicion = 0;
+		signal(SIGUSR1, ft_handler_client);
+		signal(SIGUSR2, ft_handler_client);
+		while (argv[2][posicion] != '\0')
+		{
+			ft_char_signal(argv[2][posicion], pid);
+			posicion++;
+		}
+		ft_char_signal('\n', pid);
 	}
-	pid = ft_atoi(argv[1]);
-	cadena = argv[2];
-	ft_printf("Cliente: PID: %d\n", pid);
-	ft_printf("Cliente: Mensaje: %s\n", cadena);
-	signal(SIGUSR1, ft_handler_client);
-	signal(SIGUSR2, ft_handler_client);
-	posicion = 0;
-	while (cadena[posicion])
+	else if (argc != 3 || ft_strlen(argv[2]) == 0)
 	{
-		ft_char_signal(cadena[posicion], pid);
-		posicion++;
+		ft_printf("\033[0;91mError. Introduzca PID y un mensaje\033[0;39m\n");
+		return (1);
 	}
 	return (0);
 }
