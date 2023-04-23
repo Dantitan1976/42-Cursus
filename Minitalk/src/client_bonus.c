@@ -14,15 +14,15 @@
 
 void	ft_handler_client(int sig_cliente)
 {
-	static int	signal = 0;
+	static int	recibido = 0;
 
 	if (sig_cliente == SIGUSR1)
-		signal++;
+		recibido++;
 	else if (sig_cliente == SIGUSR2)
-		{
-			ft_printf("\033[1;92mMensaje recibido.\033[0;39m\n");
-			exit(0);
-		}
+	{
+		ft_printf("\033[1;92mBytes recibidos %d.\033[0;39m\n", recibido);
+		exit(0);
+	}
 }
 
 void	ft_char_signal(char char_env, int pid)
@@ -46,23 +46,21 @@ int	main(int argc, char **argv)
 	int		pid;
 	int		posicion;
 
-	if (argc == 3)
-	{
-		pid = ft_atoi(argv[1]);
-		posicion = 0;
-		signal(SIGUSR1, ft_handler_client);
-		signal(SIGUSR2, ft_handler_client);
-		while (argv[2][posicion] != '\0')
-		{
-			ft_char_signal(argv[2][posicion], pid);
-			posicion++;
-		}
-		ft_char_signal('\n', pid);
-	}
-	else if (argc != 3 || ft_strlen(argv[2]) == 0)
+	if (argc != 3 || ft_strlen(argv[2]) == 0)
 	{
 		ft_printf("\033[0;91mError. Introduzca PID y un mensaje\033[0;39m\n");
 		return (1);
 	}
+	pid = ft_atoi(argv[1]);
+	signal(SIGUSR1, ft_handler_client);
+	signal(SIGUSR2, ft_handler_client);
+	posicion = 0;
+	while (argv[2][posicion] != '\0')
+	{
+		ft_char_signal(argv[2][posicion], pid);
+		posicion++;
+	}
+	ft_char_signal('\n', pid);
+	ft_printf("\033[1;92mBytes recibidos %d.\033[0;39m\n", posicion);
 	return (0);
 }

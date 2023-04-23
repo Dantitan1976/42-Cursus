@@ -54,7 +54,7 @@ norminette:
 libft:
 	@echo "\n$(VERDE) ***** COMPILANDO LIBRERIA *****$(DEF_COLOR)\n"
 	@make -C libft
-	@echo "\n$(VERDE)Librería compilada con éxito$(DEF_COLOR)"
+	@echo "$(VERDE)Librería compilada$(DEF_COLOR)\n"
 
 compilar: $(NAME_SERVIDOR) $(NAME_CLIENTE)
 
@@ -73,21 +73,27 @@ $(NAME_CLIENTE): $(OBJS_CLIENT)
 	@echo "\n$(VERDE)Programa cliente compilado con éxito$(DEF_COLOR)"
 
 $(NAME_SERVIDOR_BONUS): $(OBJS_SERVER_BONUS)
-	@echo "\n ****** COMPILANDO PROGRAMA SERVIDOR BONUS ******\n"
+	@echo "\n$(VERDE)****** COMPILANDO PROGRAMA SERVIDOR BONUS*****$(DEF_COLOR)\n"
 	$(CC) $(CFLAGS) $(OBJS_SERVER_BONUS) $(LIBRERIA) -o $(NAME_SERVIDOR_BONUS)
+	@echo "$(VERDE)Programa servidor bonus compilado con éxito$(DEF_COLOR)\n"
 
 $(NAME_CLIENTE_BONUS): $(OBJS_CLIENT_BONUS)
-	@echo "\n ****** COMPILANDO PROGRAMA CLIENTE BONUS ******\n"
+	@echo "\n$(VERDE)****** COMPILANDO PROGRAMA CLIENTE BONUS******$(DEF_COLOR)\n"
 	$(CC) $(CFLAGS) $(OBJS_CLIENT_BONUS) $(LIBRERIA) -o $(NAME_CLIENTE_BONUS)
+	@echo "$(VERDE)Programa cliente bonus compilado con éxito$(DEF_COLOR)\n"
 
 clean:
+	@echo "\n$(VERDE)****** ELIMINANDO FICHEROS OBJETO******$(DEF_COLOR)\n"
 	make clean -C libft
 	$(RM) $(OBJS_CLIENT) $(OBJS_SERVER) $(OBJS_CLIENT_BONUS) $(OBJS_SERVER_BONUS)
+	@echo "$(VERDE)Eliminación de ficheros objeto terminada con éxito$(DEF_COLOR)\n"
 
 fclean: clean
 	make fclean -C libft
+	@echo "\n$(VERDE)****** ELIMINANDO FICHEROS EJECUTABLES******$(DEF_COLOR)\n"
 	$(RM) $(NAME_CLIENTE) $(NAME_SERVIDOR) $(NAME_CLIENTE_BONUS) $(NAME_SERVIDOR_BONUS)
+	@echo "$(VERDE)Eliminación de ficheros ejecutables terminada con éxito$(DEF_COLOR)\n"
 
-re: fclean all
+re: fclean all bonus
 
 .PHONY: all norminette libft compilar compilar_bonus bonus clean fclean re
